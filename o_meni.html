@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vinko Perković - O Meni</title>
+  <link rel="stylesheet" href="o_meni.css">
+</head>
+<body>
+
+    <header id="navbar">
+       <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html">POČETNA</a></li>
+                <li><a href="o_meni.html">O MENI</a></li>
+                <li><a href="vjezbe.html">VJEŽBE</a></li>
+                <li><a href="video.html">VIDEO</a></li>
+            </ul>
+            <div class="theme-switch">
+                <label class="switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+                </label>
+            </div>
+        </nav>
+    </header>
+
+    <section class="title-card">
+    <div class="overlay">
+        <h1>O MENI</h1>
+        <p id="text">Ukratko nekoliko informacija i zanimljivosti o meni.</p>
+    </div>
+    </section>
+
+    <div class="underline"></div>
+
+    <section class="main-area">
+        <div class="sub-area">
+            <p>
+            Moje ime je <strong>Vinko Perković.</strong><br>
+            Dolazim iz Livna gdje sam završio četiri godine srednje škole u struci kao <strong>Web Dizajner.</strong><br>
+            Osobno vrijeme provodim sa obitelji ili samostalno u šetnji.<br>
+            U slobodno vrijeme crtam, sviram, pravim skulpture, izrađujem nakit, rezbarim drvene ukrase ili provodim vrijeme sa svojim psom.<br>
+            Volim životinje, prirodu, a prije svega mir i tišinu.
+            </p>
+        </div>
+
+        <div class="sub-area">
+            <h3>Vještine</h3>
+            <p>
+            Kroz život sam posvetio vrijeme tehnologiji i naučio dosta toga.<br>
+            Kod samog kodiranja usavršio sam rad na području sljedećih jezika:
+                <ul>
+                    <li><a target="_blank" href="https://html.com/">HTML</a></li>
+                    <li><a target="_blank" href="https://www.w3schools.com/css/">CSS</a></li>
+                    <li><a target="_blank" href="https://www.javascript.com/">JAVASCRIPT</a></li>
+                    <li><a target="_blank" href="https://www.python.org/">PYTHON</a></li>
+                    <li><a target="_blank" href="https://www.djangoproject.com/">DJANGO</a></li>
+                    <li><a target="_blank" href="https://www.mysql.com/">MySQL</a></li>
+                </ul><br>
+            Osim programskih jezika, dosta vremena sam proveo u ostalim granama tehnike.<br>
+            Ponajviše u programima za crtanje i modeliranje.<br>
+            Programi s kojima sam vrlo dobro upoznat su:
+            <ul>
+                <li><a target="_blank" href="https://www.capcut.com/">CapCut</a></li>
+                <li><a target="_blank" href="https://code.visualstudio.com/">VSC</a></li>
+                <li><a target="_blank" href="https://krita.org/en/">Krita</a></li>
+                <li><a target="_blank" href="https://www.sketchbook.com/">SketchBook</a></li>
+                <li><a target="_blank" href="https://www.blender.org/">Blender</a></li>
+                <li><a target="_blank" href="https://www.figma.com/">Figma</a></li>
+                <li><a target="_blank" href="https://wordpress.com/">WordPress</a></li>
+                <li><a target="_blank" href="https://www.canva.com/">Canva</a></li>
+            </ul><br>
+            </p><br>
+        </div>
+    </section>
+
+    <div class="underline"></div>
+
+    <section class="main-area">
+        <h2 class="titles">Par osobnih radova</h2>
+        <div class="container">
+            <img src="Radovi/rad1.png">
+            <img src="Radovi/rad2.jpg">
+            <img src="Radovi/rad3.png">
+        </div>
+
+        <div class="youtube">
+            <h2 class="titles">Animacija</h2>
+            <iframe src="https://www.youtube.com/embed/56rMh87bHoo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>Kontakt</h3>
+                <p>Email: myemail@domain.com</p>
+                <p>Telefon: +385 XX/XXX-XXXX</p>
+            </div>
+            <div class="box">
+                <h3>Lokacija</h3>
+                <p>Zagreb, Hrvatska</p>
+                <p>GRF - Sveučilište u Zagrebu</p>
+            </div>
+                <div class="box">
+                <h3>Društvene mreže</h3>
+                <p><a target="_blank" href="https://github.com/vinkoperkovic">GitHub</a> / <a target="_blank" href="https://www.youtube.com/@spino986">YouTube</a> / <a target="_blank" href="https://www.instagram.com/art_v.p_/">Instagram</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="lightbox">
+        <button class="close-btn" aria-label="Zatvori">X</button>
+        <img src="" alt="Povećana slika">
+    </div>
+</body>
+
+<script>
+    let lastScrollTop = 0;
+    const navbar = document.getElementById("navbar");
+
+    window.addEventListener("scroll", function () {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop) {
+        navbar.style.top = "-100px";
+        } else {
+        navbar.style.top = "0";
+        }
+        lastScrollTop = scrollTop;
+    });
+
+
+
+
+    const themeToggle = document.getElementById("theme-toggle");
+    const body = document.body;
+
+    window.addEventListener("DOMContentLoaded", () => {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "light") {
+            body.classList.add("light-theme");
+            themeToggle.checked = true;
+        } else {
+            body.classList.remove("light-theme");
+            themeToggle.checked = false;
+        }
+    });
+
+    themeToggle.addEventListener("change", function () {
+        if (this.checked) {
+            body.classList.add("light-theme");
+            localStorage.setItem("theme", "light");
+        } else {
+            body.classList.remove("light-theme");
+            localStorage.setItem("theme", "dark");
+        }
+    });
+
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = lightbox.querySelector("img");
+    const closeBtn = lightbox.querySelector(".close-btn");
+
+    document.querySelectorAll(".container img").forEach(img => {
+        img.addEventListener("click", () => {
+            lightbox.style.display = "flex";
+            lightboxImage.src = img.src;
+        });
+    });
+
+    closeBtn.addEventListener("click", () => {
+        lightbox.style.display = "none";
+        lightboxImage.src = "";
+    });
+
+    lightbox.addEventListener("click", e => {
+        if (e.target === lightbox) {
+            lightbox.style.display = "none";
+            lightboxImage.src = "";
+        }
+    });
+</script>
+
+</html>
